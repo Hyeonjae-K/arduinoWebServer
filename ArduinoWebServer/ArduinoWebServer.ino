@@ -7,22 +7,22 @@ const char* password = "";
 
 ESP8266WebServer server(8080);
 
-const String postForms = "<!DOCTYPE html>\
+String Root = "<!DOCTYPE html>\
 <head>\
     <title>test</title>\
     <style>\
         h1 {\
             text-align: center;\
         }\
-    </style>\
-</head>\
+    </style>";
+String Root2 = "</head>\
 <body>\
     <h1>Hello World!</h1>\
 </body>\
 </html>";
 
 void handleRoot() {
-  server.send(200, "text/html", postForms);
+  server.send(200, "text/html", Root + Root2);
 }
 
 void setup() {
